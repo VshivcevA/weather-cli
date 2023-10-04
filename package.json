@@ -1,0 +1,33 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "description": "weather terminal app",
+  "main": "index.js",
+  "bin": "./index.js",
+  "os": ["macos","linux"],
+  "man": ["./README.md"],
+  "engines": {
+    "node": ">14"
+  },
+  "funding": "",
+  "brawser": "",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "node"
+  ],
+  "author": "Aleksandr Vshivtsev",
+  "license": "ISC",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": "",
+    "email": "vshivcev.alexandr@gmail.com"
+  }
+}
