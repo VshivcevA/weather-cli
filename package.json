@@ -2,10 +2,14 @@
   "name": "weather-cli",
   "version": "1.0.0",
   "description": "weather terminal app",
-  "main": "index.js",
-  "bin": "./index.js",
-  "os": ["macos","linux"],
-  "man": ["./README.md"],
+  "main": "weather.js",
+  "bin": {
+    "weather": "weather.js"
+  },
+  "type": "module",
+  "man": [
+    "./README.md"
+  ],
   "engines": {
     "node": ">14"
   },
@@ -29,5 +33,10 @@
   "bugs": {
     "url": "",
     "email": "vshivcev.alexandr@gmail.com"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "chalk": "^5.3.0",
+    "dedent-js": "^1.0.1"
   }
 }
