@@ -1,20 +1,33 @@
 #!/usr/bin/env node
 import {gerArgs} from "./healper/args.js"
-import {printHelp, printSuccess} from "./services/log.service.js";
+import {printHelp, printSuccess, printError} from "./services/log.service.js";
+import {saveKeyValue, TOKEN_DICTIONARY} from "./services/storage.service.js";
+import {getWeather} from "./services/api.service.js";
+
+const saveToken = async (token) => {
+    if (!token.length) {
+        printError("Не передан token")
+        return
+    }
+    try {
+        await saveKeyValue(TOKEN_DICTIONARY.token, token)
+        printSuccess("Token save")
+    } catch (e) {
+        printError(e.message)
+    }
+}
 const initCli = () => {
     const args = gerArgs(process.argv)
-    console.log("args: ", args)
-    console.clear()
     if (args.h) {
-    //     вывод help
         printHelp()
     }
     if (args.s) {
-    //     city
+        //     city
     }
     if (args.t) {
-    //     toket
+        return saveToken(args.t)
     }
+    getWeather('limassol')
     // weather or ?
 }
 initCli()
